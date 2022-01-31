@@ -39,19 +39,8 @@
               <div class="col-12 col-md-1 d-md-flex justify-self-center">
                 <div class="">
                   <button
-                    @click="notAttend(e.eventId, e.id)"
-                    class="
-                      ms-md-2
-                      w-100
-                      btn
-                      btnattending
-                      ps-2
-                      mt-2
-                      elevation-3
-                      border-0
-                      mb-3
-                    "
-                  >
+                    @click="notAttending(e.eventId, e.id)"
+                    class="ms-md-2  w-100 btn btnattending ps-2 mt-2  elevation-3 border-0 mb-3">
                     Not Attend <i class="ms-2 mdi mdi-18px mdi-human pe-1"></i>
                   </button>
                 </div>
@@ -182,6 +171,20 @@ export default {
 .btn:focus {
   outline: none;
   box-shadow: none;
+}
+
+.scrollbar {
+  overflow-y: scroll;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+.scrollbar::-webkit-scrollbar-track {
+  background: #2e2e2e;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #adadad;
+  border-radius: 10px;
 }
 
 </style>

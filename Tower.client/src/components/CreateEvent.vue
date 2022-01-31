@@ -1,64 +1,64 @@
 <template>
-  <div class="eventmodal">
+  <div class="eventmodal ">
     <div
       :id="'modalcreateedit'"
-      class="modal fade"
+      class="modal fade "
       tabindex="-1"
       role="dialog"
       aria-labelledby="modelTitleId"
       aria-hidden="true"
     >
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content background">
           <div class="modal-header">
-            <h5 class="modal-title">
+            <h5 class="modal-title text-light">
               {{ eventData.id ? "Edit Event" : "New Event" }}
             </h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close "
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
           <div class="modal-body">
             <form id="eventForm" @submit.prevent="handleSubmit">
-              <p class="m-0">Event Name:</p>
+              <p class="m-0 text-light">Event Name:</p>
               <input
                 required
                 v-model="eventData.name"
                 class="m-2 border-dark"
                 type="text"
               />
-              <p class="m-0 ">Description:</p>
+              <p class="m-0 text-light ">Description:</p>
               <textarea
                 v-model="eventData.description"
                 class="m-2  border-dark"
                 cols="50"
                 required
               />
-              <p class="m-0">Event Image:</p>
+              <p class="m-0 text-light">Event Image:</p>
               <input
                 required
                 v-model="eventData.coverImg"
                 class="m-2 border-dark"
                 type="text"
               />
-              <p class="m-0">Event Location:</p>
+              <p class="m-0 text-light">Event Location:</p>
               <input
                 required
                 v-model="eventData.location"
                 class="m-2 border-dark"
                 type="text"
               />
-              <p class="m-0">Event Capacity:</p>
+              <p class="m-0 text-light">Event Capacity:</p>
               <input
                 required
                 v-model="eventData.capacity"
                 class="m-2 border-dark"
                 type="number"
               />
-              <p class="m-0">Event Start Date:</p>
+              <p class="m-0 text-light">Event Start Date:</p>
               <input
                 required
                 min="2020-01-01"
@@ -67,8 +67,8 @@
                 class="m-2 border-dark"
                 type="date"
               />
-              <p class="m-0">Event Category:</p>
-              <div class="btn-group">
+              <p class="m-0 text-light">Event Category:</p>
+              <div class="btn-group mx-2">
                 <select required class="" v-model="eventData.type">
                   <option>
                     <a class="dropdown-item" value="concert">concert</a>
@@ -94,7 +94,7 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary text-white"
+              class="btn btn-secondary text-dark"
               data-bs-dismiss="modal"
             >
               Close
@@ -102,7 +102,7 @@
             <button
               type="submit"
               form="eventForm"
-              class="btn btn-primary text-white"
+              class="btn greenButton text-dark"
             >
               {{ eventData.id ? "Save" : "Post" }}
             </button>
@@ -163,6 +163,20 @@ export default {
 .btn:focus {
   outline: none;
   box-shadow: none;
+}
+
+.greenButton {
+  background-color: #72d8a2;
+  font-weight: 600;
+}
+
+.background {
+  background: rgb(71, 76, 97);
+  background: linear-gradient(
+    180deg,
+    rgba(71, 76, 97, 1) 30%,
+    rgba(42, 45, 58, 1) 100%
+  );
 }
 
 </style>

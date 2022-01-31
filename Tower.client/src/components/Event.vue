@@ -31,13 +31,13 @@
             </div>
             <div
               v-else-if="towerEvents.isCanceled === false"
-              class="d-flex justify-content-end pe-2 pt-1 align-items-center"
+              class="d-flex justify-content-end pe-2 align-items-center"
             >
               <p class="pe-2 text-primary">{{ towerEvents.capacity }}</p>
               <p class="">spots available</p>
             </div>
             <div
-              class="canceledEvent mt-1 text-center"
+              class="cancelledEvent mt-1 text-center"
               v-else-if="towerEvents.isCanceled === true"
             >
               EVENT CANCELED
@@ -86,7 +86,7 @@ export default {
   background-image: v-bind(coverImg);
   background-size: cover;
 }
-.canceledEvent {
+.cancelledEvent {
   background: rgb(224, 55, 55);
   background: linear-gradient(
     90deg,

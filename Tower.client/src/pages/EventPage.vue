@@ -1,27 +1,27 @@
 <template>
-  <div class="container scrollbar background height100">
+  <div class="container-fluid scrollbar background height100">
     <div class="row justify-content-md-center">
-      <div class="col-md-12 mt-2">
+      <div class="col-12 mt-2">
         <router-link :to="{ name: 'Home' }">
           <img src="../assets/img/Logo.png" width="250" class="m-3" alt="" />
         </router-link>
       </div>
     </div>
-    <div class="row justify-content-center p-2">
-      <div class="col-md-11 d-flex image my-2 rounded">
-        <div class="row p-2 flex-nowrap">
-          <div class=" col-md-3 widthevent justify-content-center d-flex align-items-center">
-            <div class="width100">
+    <div class="row d-flex justify-content-center p-2">
+      <div class="col-11  image my-1 rounded">
+        <div class="row p-1 d-flex flex-nowrap">
+          <div class=" col-4 d-flex align-items-center">
+           
               <img
-                class="m-3 my-4 rounded boardpic elevation-3"
+                class=" my-5 mx-3 rounded boardPic elevation-3"
                 :src="activeEvent.coverImg"
                 alt=""
               />
-            </div>
+          
           </div>
           <div
-            :class="editEvent ? 'wideditable' : ''"
-            class="col-md-8 widhere p-2"
+            :class="editEvent ? '' : ''"
+            class="col-md-8  "
           >
             <div
               v-if="activeEvent.creatorId === account.id"
@@ -67,9 +67,9 @@
                 </li>
               </ul>
             </div>
-            <div v-else class="emptyspotif"></div>
-            <div v-if="editEvent">
-              <form @submit.prevent="submitEdit">
+            
+            <div v-if="editEvent" class="mx-5">
+              <form class="ms-5" @submit.prevent="submitEdit">
                 <div class="d-flex justify-content-between">
                   <div>
                     <p class="text-light m-0">Event name:</p>
@@ -100,8 +100,8 @@
                       />
                     </div>
                     <div>
-                      <p class="m-0 text-light mt-3">Event Category:</p>
-                      <div class="btn-group">
+                      <p class=" text-light mt-3">Event Category:</p>
+                      <div >
                         <select
                           class=""
                           :placeholder="activeEvent.type"
@@ -128,7 +128,7 @@
                       </div>
                     </div>
                     <div>
-                      <div>
+                      <div >
                         <p class="m-0 text-light">Image URL:</p>
                         <input
                           v-model="editable.coverImg"
@@ -140,7 +140,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="">
+                <div>
                   <p class="text-light">Description:</p>
                   <textarea
                     class="border-dark"
@@ -150,16 +150,13 @@
                   />
                 </div>
                 <div
-                  class="canceledevent text-light text-center"
+                  class="cancelledEvent text-light text-center"
                   v-if="activeEvent.isCanceled"
                 >
                   EVENT CANCELED
                 </div>
-                <div v-else class="d-flex">
-                  <div class="width90">
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
+                <div v-else class="d-flex justify-content-between">
+             
                       <div>
                         <p class="text-light">Event capacity:</p>
                         <input
@@ -170,15 +167,13 @@
                           type="number"
                         />
                       </div>
-                      <button
-                        type="submit"
-                        class="btn bggreen postbtn elevation-3"
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
                 </div>
+                    <div class="d-flex justify-content-end">
+
+                       <button type="submit" class="btn greenButton elevation-3 m-3">
+                        Save
+                       </button>
+                    </div>
               </form>
             </div>
             <div v-else>
@@ -201,11 +196,11 @@
                 </div>
               </div>
               <div class="d-flex ps-5">
-                <p class="pt-2 desctitle">{{ activeEvent.description }}</p>
+                <p class="pt-2 text-light">{{ activeEvent.description }}</p>
               </div>
               <div class="d-flex p-5"></div>
               <div
-                class="canceledEvent text-light text-center"
+                class="cancelledEvent text-light text-center"
                 v-if="activeEvent.isCanceled"
               >
                 EVENT CANCELED
@@ -238,15 +233,7 @@
                   </button>
                   <button
                     v-else-if="activeEvent.capacity === 0"
-                    class="
-                      btn btn-warning
-                      notAttendingButton
-                      border-0
-                      ps-3
-                      elevation-3
-                      no-select
-                    "
-                  >
+                    class="btn btn-warning notAttendingButton border-0 ps-3 elevation-3 no-select">
                     No spots left
                     <i class="ms-2 mdi mdi-18px mdi-human pe-1"></i>
                   </button>
@@ -268,7 +255,7 @@
               <div class="card profiles d-flex flex-row flex-wrap p-1">
                 <div v-for="p in activeAttending" :key="p.id">
                   <img
-                    class="picrounded"
+                    class="picRounded"
                     :src="p.account?.picture"
                     height="40"
                     width="40"
@@ -283,8 +270,9 @@
       </div>
       <div class="row justify-content-center mt-5">
         <div class="col-md-7 mb-3">
+          <p class="fontcolor"> What are people saying</p>
           <div class="card image">
-            <div class="d-flex justify-content-end mt-2 margin">
+            <div class="d-flex justify-content-end mt-2 mx-3">
               <p class="m-1 green">Join the conversation</p>
             </div>
             <form @submit.prevent="create">
@@ -298,7 +286,7 @@
                   v-model="state.editable.body"
                 ></textarea>
               </div>
-              <div class="d-flex justify-content-end mt-3 margin">
+              <div class="d-flex justify-content-end mt-3 mx-3 ">
                 <button
                   type="submit"
                   title="Post Comment"
@@ -457,41 +445,23 @@ export default {
 
 
 <style lang="scss" scoped>
-.picrounded {
+.picRounded {
   border-radius: 50%;
   object-fit: cover;
 }
-.wideditable {
-  width: 87%;
-}
-.postbtn {
+
+.greenButton {
+  background-color: #72d8a2;
   font-weight: 600;
 }
-.bggreen {
-  background-color: #72d8a2;
-}
-.widthevent {
-  width: 53vh;
-}
-.width100 {
-  width: 100%;
-}
-.width90 {
-  width: 92%;
-}
-.sizetest {
-  width: 100%;
-}
-.widhere {
-  max-width: 90vh;
-}
-.boardpic {
+
+.boardPic {
   display: inline-block;
   object-fit: cover;
   height: 350px;
   width: 370px;
 }
-.canceledEvent {
+.cancelledEvent {
   background: rgb(224, 55, 55);
   background: linear-gradient(
     90deg,
@@ -501,21 +471,14 @@ export default {
     rgba(42, 45, 58, 0) 100%
   );
 }
-.emptyspotif {
-  height: 2vh;
-}
+
 .notAttendingButton {
   color: #862f3f;
   background-color: #ff5977;
   font-weight: 500;
   font-size: 15px;
 }
-.desctitle {
-  font-weight: 400;
-  line-height: 25px;
-  font-size: 15px;
-  color: #e4e4e4;
-}
+
 .attendButton {
   font-weight: 500;
   font-size: 15px;
@@ -538,23 +501,16 @@ export default {
   background-color: #2a2d3a;
 }
 
-.margin {
-  margin-right: 5%;
-}
-
 .image {
   background-color: #474c61 !important;
   height: auto;
 }
 .profiles {
   height: 10vh;
-
   width: 105vh;
   background-color: #474c61 !important;
 }
-.postbtn {
-  font-weight: 600;
-}
+
 .fontcolor {
   color: #a0a2ad;
 }
@@ -613,6 +569,20 @@ export default {
 .btn:focus {
   outline: none;
   box-shadow: none;
+}
+
+.scrollbar {
+  overflow-y: scroll;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+.scrollbar::-webkit-scrollbar-track {
+  background: #2e2e2e;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #adadad;
+  border-radius: 10px;
 }
 
 </style>
