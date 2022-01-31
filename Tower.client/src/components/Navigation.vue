@@ -3,7 +3,7 @@
     <div class="row">
       <div
         v-if="user.isAuthenticated"
-        class="col-12 d-flex navheight flex-column"
+        class="col-12 d-flex navHeight flex-column"
       >
         <div
           class="align-items-center d-flex flex-column justify-content-between"
@@ -15,7 +15,7 @@
             class="mt-4"
           >
             <img
-              class="rounded picuser elevation-3"
+              class="rounded profilePic elevation-3"
               width="85"
               height="85"
               :src="account.picture"
@@ -36,7 +36,7 @@
             <button
               data-bs-toggle="modal"
               data-bs-target="#modalcreateedit"
-              class="mt-5 btn bggreen py-2 postbtn elevation-3"
+              class="mt-5 btn bggreen py-2 newEventButton elevation-3"
             >
               New Event
             </button>
@@ -44,7 +44,7 @@
           <div>
             <button
               @click="logout"
-              class="mt-5 btn bgtransparent py-2 postbtn border elevation-3"
+              class="mt-5 btn bgtransparent py-2 border elevation-3"
             >
               Logout
             </button>
@@ -102,7 +102,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.navheight {
+.navHeight {
   height: 100vh;
   max-height: 100vh;
   background: rgb(71, 76, 97);
@@ -122,10 +122,10 @@ export default {
 
   cursor: pointer;
 }
-.picuser {
+.profilePic {
   object-fit: cover;
 }
-.postbtn {
+.newEventButton {
   font-weight: 600;
 }
 .bggreen {

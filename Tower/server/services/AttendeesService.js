@@ -30,7 +30,7 @@ class AttendeesService {
     async remove(id, userId) {
         const found = await dbContext.Attendee.findById(id)
         if (found.accountId.toString() !== userId) {
-            throw new Forbidden('You dont have Permition for this')
+            throw new Forbidden('You dont have Permission for this')
         }
         await dbContext.Attendee.findByIdAndDelete(id)
         await towerEventsService.capacityDecrease(found.eventId)

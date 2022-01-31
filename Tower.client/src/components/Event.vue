@@ -5,26 +5,26 @@
       :to="{ name: 'Event', params: { id: towerEvents.id } }"
     >
       <div
-        class="card cardshome elevation-3 border m-2 d-flex justify-content-end"
+        class="card cardsHome elevation-3 border m-2 d-flex justify-content-end"
       >
-        <div class="card blurycards m-0 rounded-0">
+        <div class="card blurryCards m-0 rounded-0">
           <div>
-            <p class="pt-1 ps-2 m-0 eventname">
+            <p class="pt-1 ps-2 m-0 text-uppercase">
               {{ towerEvents.name }}
             </p>
-            <p class="ps-2 m-0 cardlocaldate">
+            <p class="ps-2 m-0 ">
               {{ towerEvents.location }}
             </p>
             <div class="d-flex">
-              <p class="m-0 ps-2 cardlocaldate">Event Date:</p>
-              <p class="ps-2 m-0 cardlocaldate">
+              <p class="m-0 ps-2 ">Event Date:</p>
+              <p class="ps-2 m-0 ">
                 {{
                   new Date(towerEvents.startDate).toISOString().substring(0, 10)
                 }}
               </p>
             </div>
             <div
-              class="atcapacity mt-1 text-center"
+              class="atCapacity mt-1 text-center"
               v-if="towerEvents.capacity === 0"
             >
               AT CAPACITY
@@ -33,11 +33,11 @@
               v-else-if="towerEvents.isCanceled === false"
               class="d-flex justify-content-end pe-2 pt-1 align-items-center"
             >
-              <p class="pe-2 capacityTitle">{{ towerEvents.capacity }}</p>
-              <p class="cardlocaldate">spots available</p>
+              <p class="pe-2 text-primary">{{ towerEvents.capacity }}</p>
+              <p class="">spots available</p>
             </div>
             <div
-              class="canceledevent mt-1 text-center"
+              class="canceledEvent mt-1 text-center"
               v-else-if="towerEvents.isCanceled === true"
             >
               EVENT CANCELED
@@ -71,29 +71,14 @@ export default {
 .active {
   pointer-events: none;
 }
-.capacitytitle {
-  color: #56c7fb;
-  font-weight: 600;
-  font-size: 17px;
-}
-.cardlocaldate {
-  font-weight: 500;
-  font-size: 15px;
-  color: #d1e8f5;
-}
-.eventname {
-  font-weight: 500;
-  font-size: 18px;
-  color: #e4e4e4;
-}
-.blurycards {
+.blurryCards {
   height: 45% !important;
   color: white;
   background-color: #4747479f;
   border: 0;
   width: 100%;
 }
-.cardshome {
+.cardsHome {
   height: 33vh;
   min-width: 30vh;
   border-width: 6px !important;
@@ -101,7 +86,7 @@ export default {
   background-image: v-bind(coverImg);
   background-size: cover;
 }
-.canceledevent {
+.canceledEvent {
   background: rgb(224, 55, 55);
   background: linear-gradient(
     90deg,
@@ -112,7 +97,7 @@ export default {
   );
   color: #e4e4e4;
 }
-.atcapacity {
+.atCapacity {
   background: rgb(224, 55, 55);
   background: linear-gradient(
     90deg,

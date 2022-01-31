@@ -63,14 +63,14 @@
             aria-labelledby="authDropdown"
           >
             <router-link :to="{ name: 'Account' }">
-              <div class="list-group-item list-group-item-action hoverable">
+              <div class="list-group-item list-group-item-action hover">
                 Manage Account
               </div>
             </router-link>
             <div
               class="
                 list-group-item list-group-item-action
-                hoverable
+                hover
                 text-danger
               "
               @click="logout"
@@ -114,7 +114,7 @@ export default {
 .dropdown-menu.show {
   transform: scale(1);
 }
-.hoverable {
+.hover {
   cursor: pointer;
 }
 a:hover {

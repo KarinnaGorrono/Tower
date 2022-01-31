@@ -35,7 +35,7 @@
               >
                 <div
                   title="Options"
-                  class="text-end dotbtn mdi mdi-36px mdi-dots-horizontal"
+                  class="text-end dotButton mdi mdi-36px mdi-dots-horizontal"
                 ></div>
               </button>
               <ul
@@ -122,8 +122,7 @@
                           </option>
                           <option>
                             <a class="dropdown-item" value="digital" href="#"
-                              >digital</a
-                            >
+                              >digital</a>
                           </option>
                         </select>
                       </div>
@@ -185,8 +184,8 @@
             <div v-else>
               <div class="d-flex justify-content-between">
                 <div>
-                  <p class="titlecard m-0">{{ activeEvent.name }}</p>
-                  <p class="m-0 mb-3 mt-1 localtitle">
+                  <p class="text-light m-0 ps-5">{{ activeEvent.name }}</p>
+                  <p class="m-0 mb-3 mt-1 text-light ps-5">
                     {{ activeEvent.location }}
                   </p>
                 </div>
@@ -201,12 +200,12 @@
                   </p>
                 </div>
               </div>
-              <div class="d-flex">
+              <div class="d-flex ps-5">
                 <p class="pt-2 desctitle">{{ activeEvent.description }}</p>
               </div>
-              <div class="d-flex emptyspace"></div>
+              <div class="d-flex p-5"></div>
               <div
-                class="canceledevent text-light text-center"
+                class="canceledEvent text-light text-center"
                 v-if="activeEvent.isCanceled"
               >
                 EVENT CANCELED
@@ -214,11 +213,11 @@
               <div v-else class="d-flex justify-content-between">
                 <div class="d-flex align-items-center">
                   <div>
-                    <p class="capacitytitle">
+                    <p class="text-primary ps-5">
                       {{ activeEvent.capacity }}
                     </p>
                   </div>
-                  <div class="localtitle mb-0 ms-2">
+                  <div class="text-light mb-0 ms-2 ">
                     <p>Spots Available</p>
                   </div>
                 </div>
@@ -291,7 +290,7 @@
             <form @submit.prevent="create">
               <div class="d-flex justify-content-center mt-2">
                 <textarea
-                  class="inputwid form-control"
+                  class="m-3 form-control"
                   placeholder="Tell the people..."
                   type="text"
                   name=""
@@ -492,7 +491,7 @@ export default {
   height: 350px;
   width: 370px;
 }
-.canceledevent {
+.canceledEvent {
   background: rgb(224, 55, 55);
   background: linear-gradient(
     90deg,
@@ -526,41 +525,19 @@ export default {
   font-size: 15px;
   background-color: #72d8a2;
 }
-.capacitytitle {
-  color: #56c7fb;
-  font-weight: 600;
-  font-size: 19px;
-}
-.emptyspace {
-  height: 17vh;
-  width: 1vh;
-}
-.titlecard {
-  color: rgb(238, 238, 238);
-  font-weight: 500;
-  font-size: 20px;
-}
-.localtitle {
-  color: #ccf3fd;
-  font-weight: 500;
-  font-size: 15px;
-}
+
 .btn:focus {
   outline: none;
   box-shadow: none;
 }
-.dotbtn {
+.dotButton {
   color: #ccf3fd;
   margin-right: 2vh;
 }
 .background {
   background-color: #2a2d3a;
 }
-.inputwid {
-  border-color: #c8c8c8 !important;
-  width: 90%;
-  height: 15vh;
-}
+
 .margin {
   margin-right: 5%;
 }

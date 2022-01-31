@@ -34,7 +34,7 @@
                 alt="user photo"
                 height="150"
                 width="150"
-                class="picconfig elevation-3 border rounded mt-4"
+                class="picConfig elevation-3 border rounded mt-4"
               />
             </div>
             <div class="text-center mb-3" v-if="edit === true">
@@ -126,7 +126,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.picconfig {
+.picConfig {
   object-fit: cover;
 }
 .background {
