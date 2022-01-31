@@ -108,7 +108,8 @@
                           v-model="editable.type"
                         >
                           <option>
-                            <a class="dropdown-item" value="concert">concert</a>
+                            <a class="dropdown-item" value="concert">
+                              concert</a>
                           </option>
                           <option>
                             <a class="dropdown-item" value="convention" href="#"

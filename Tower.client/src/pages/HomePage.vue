@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-<div class="row justify-content-center">
+  <div class="row justify-content-center">
       <div class="col-md-11 d-flex justify-content-between align-items-center sort rounded my-2">
         <div>
           <button @click="getAll" title="All" class="btn text-light px-3 ">
