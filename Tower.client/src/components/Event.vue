@@ -18,8 +18,7 @@
             <div class="d-flex">
               <p class="m-0 ps-2 ">Event Date:</p>
               <p class="ps-2 m-0 ">
-                {{
-                  new Date(towerEvents.startDate).toISOString().substring(0, 10)
+                {{ new Date(towerEvents.startDate || towerEvents.event.startDate).toLocaleDateString()
                 }}
               </p>
             </div>
@@ -55,12 +54,11 @@ import { computed } from "@vue/reactivity"
 export default {
   props: {
     towerEvents: { type: Object },
-    attending: { type: Object }
   },
 
   setup(props) {
     return {
-      coverImg: computed(() => `url(${props.towerEvents?.coverImg})`)
+      coverImg: computed(() => `url(${props.towerEvents?.coverImg || props.towerEvents.event.coverImg})`)
     }
   }
 }

@@ -16,8 +16,8 @@
           class="d-flex flex-wrap"
           v-if="towerEvents.length > 0"
         >
-          <div class="col-md-3" v-for="e in towerEvents" :key="e.id">
-            <Event :towerEvents="e" />
+          <div class="col-md-3" v-for="a in attending" :key="a.id">
+            <Event :towerEvents="a" />
           </div>
         </div>
         <div v-else>
